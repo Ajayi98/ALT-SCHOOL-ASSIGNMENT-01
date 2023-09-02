@@ -15,12 +15,22 @@ const assignment = {};
  * @returns number the sum of the numbers from 1 to destination
  */
 function sumOfNumbersTo(destination) {
+
     let sum = 0;
-    return sum
+    for (let i = 1; i <= destination; i++) {
+        sum += i;
+
+    }
+
+    return sum;
 }
+const destination = 10;
+const result = sumOfNumbersTo(destination);
+console.log(`Sum of numbers from 1 to ${destination} is ${result}`);
 
 
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+
+assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
  * Challenge - 2
@@ -33,23 +43,38 @@ function sumOfNumbersTo(destination) {
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
 function countEvenNumbersWithin(destination) {
-    // Write your code here
-    // get the number from 1 to destination
-    let sum = 0;
-    let count = 0;
-    let arrayOfEvenNumbers = [];
+    
+    
+        let sum = 0;
+        let count = 0;
+        let arrayOfEvenNumbers = [];
+    
+        for (let i =1; i<= destination; i++ ){
+            if(i % 2 === 0){
+                count ++
+                sum +=i
+                arrayOfEvenNumbers.push(i)
+            }
+        }
+    
+        return {
+        
+            count,
+            sum,
+            arrayOfEvenNumbers
+        };
+    }
+    
+    const destinationValue = 20;
+    const Result = countEvenNumbersWithin(destinationValue)
+    
+    console.log("count of even numbers:", Result.count)
+    console.log("sum of even numbers:", Result.sum)
+    console.log("array of even numbers:", Result.arrayOfEvenNumbers)
+      
 
-    return {
-        // property value shorthand
-        // when the property name and the value name are the same
-        // you can just write the property name in your object
-        count,
-        sum,
-        arrayOfEvenNumbers
-    };
-}
 
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
